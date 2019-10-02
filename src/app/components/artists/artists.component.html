@@ -1,0 +1,10 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns" *ngIf="!loading">
+    <app-card 
+        (click)="goAlbum(album.id, album.images[0].url)"
+        *ngFor="let album of albums" 
+        [src]="album.images | img"
+        [title]="album.name" 
+        [subtitle]="" >
+    </app-card>
+</div>    

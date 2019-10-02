@@ -1,0 +1,16 @@
+<div class="row mt-4">
+    <div class="col">
+        <input #term (keyup)="searchArtist($event, term.value)" class="form-control" type="text" placeholder="Search Artist">
+    </div>
+</div>
+
+<app-loading *ngIf="loading"></app-loading>
+<div class="card-columns" *ngIf="!loading">
+    <app-card 
+        (click)="goArtist(artist.id)"
+        *ngFor="let artist of artists" 
+        [src]="artist.images | img"
+        [title]="artist.name" 
+        [subtitle]="" >
+    </app-card>
+</div>

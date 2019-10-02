@@ -1,0 +1,21 @@
+<div class="row mt-5 flexContainer">
+    <img class="mdImg" [src]="imgUrl">
+</div>
+
+<div class="row mt-5">
+    <div class="col">
+        <table class="table table-dark">
+            <thead>
+                <th>Name</th>
+                <th>Play</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let track of tracks">
+                    <td>{{track.name}}</td>
+                    <td><audio [src]="track.preview_url" controls></audio></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
